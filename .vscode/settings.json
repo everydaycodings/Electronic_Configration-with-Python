@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/home/ninja/anaconda3/envs/Django-Projects/bin/python"
 }
