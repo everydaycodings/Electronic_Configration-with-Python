@@ -18,6 +18,8 @@ for x in range(len(prefix)):
     maxocc(prefix[x])
     if elem == 0:
         break
+    elif elem >= 118:
+        break
     elif elem >= maxoccu:
         eleconfig = eleconfig + prefix[x] + str(maxoccu) + " "
         elem = elem - maxoccu
