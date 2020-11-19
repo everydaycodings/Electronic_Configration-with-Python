@@ -19,8 +19,8 @@ element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berillium": 4, "boron": 5,
            "actinium": 89, "thorium": 90, "protoactinium": 91, "uranium": 92, "neptunium": 93, "plutonium": 94,
            "americium": 95, "curium": 96, "barkelium": 97, "californium": 98, "einsteinium": 99, "fermium": 100,
            "mendelevium": 101, "nobelium": 102, "lawrencium": 103
+        }
 
-}
 try:
     elem = element.get(user)
 
