@@ -52,5 +52,4 @@ for x in range(len(prefix)):
         break
     print(elem)
 
-
-print(eleconfig)
+print(eleconfig.split())
