@@ -26,7 +26,8 @@ try:
 
 
     eleconfig = ""
-    edit_list = []
+    last_orbit =""
+    second_last_orbit = ""
     prefix = ["1s", "2s", "2p", "3s", "3p", "4s", "3d", "4p", "5s", "4d", "5p", "6s", "4f", "5d", "6p", "7s", "5f", "6d", "7p"]
 
     def maxocc(s):
@@ -59,16 +60,23 @@ try:
     if len(list_eleconfig) <= 1:
         last_orbit = list_eleconfig[-1]
 
-        edit_list.append(last_orbit)
+        list_last_orbit = list(last_orbit)
+        print(list_last_orbit)
+        
 
     else:
         second_last_orbit = list_eleconfig[-2]
         last_orbit = list_eleconfig[-1]
+        
+        list_last_orbit = list(last_orbit)
+        list_second_last_orbit = list(second_last_orbit)
+        print(list_last_orbit)
+        print(list_second_last_orbit)
+       
 
-        edit_list.append(second_last_orbit)
-        edit_list.append(last_orbit)
-
-    print(edit_list)
+    
+    
+    
 
 except TypeError:
     print("wrong element")
