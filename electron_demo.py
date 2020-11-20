@@ -67,7 +67,7 @@ try:
     else:
         second_last_orbit = list_eleconfig[-2]
         last_orbit = list_eleconfig[-1]
-        
+
         list_last_orbit = list(last_orbit)
         list_second_last_orbit = list(second_last_orbit)
         print(list_last_orbit)
@@ -75,8 +75,5 @@ try:
        
 
     
-    
-    
-
 except TypeError:
     print("wrong element")
