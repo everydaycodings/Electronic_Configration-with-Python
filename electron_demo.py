@@ -94,7 +94,6 @@ try:
         print("f")
         
        
-
     
 except TypeError:
     print("wrong element")
