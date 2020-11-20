@@ -70,8 +70,29 @@ try:
 
         list_last_orbit = list(last_orbit)
         list_second_last_orbit = list(second_last_orbit)
-        print(list_last_orbit)
         print(list_second_last_orbit)
+        print(list_last_orbit)
+    
+
+    if list_last_orbit[-2] == "s" or "p":
+        if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) <= 7:
+            print("Valance Electron:",int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]),"A")
+            print("Period:",int(list_last_orbit[-3]))
+            print("Block:", list_last_orbit[-2])
+            print("Nature: Normal Element" )
+
+        if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) == 8:
+            print("Valance Electron: 0A")
+            print("Period:",int(list_last_orbit[-3]))
+            print("Block:", list_last_orbit[-2])
+            print("Nature: Normal Element" )
+
+
+    elif list_last_orbit[-2] == "d":
+        print("d")
+    elif list_last_orbit[-2] == "f":
+        print("f")
+        
        
 
     
