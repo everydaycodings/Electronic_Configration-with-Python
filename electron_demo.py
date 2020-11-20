@@ -76,13 +76,13 @@ try:
 
     if list_last_orbit[-2] == "s" or "p":
         if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) <= 7:
-            print("Valance Electron:",int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]),"A")
+            print("Group",int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]),"A")
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element" )
 
         if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) == 8:
-            print("Valance Electron: 0A")
+            print("Group: 0A")
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element" )
