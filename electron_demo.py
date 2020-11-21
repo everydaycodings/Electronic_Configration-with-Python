@@ -28,6 +28,7 @@ try:
     eleconfig = ""
     last_orbit =""
     second_last_orbit = ""
+    third_last_orbit = ""
     prefix = ["1s", "2s", "2p", "3s", "3p", "4s", "3d", "4p", "5s", "4d", "5p", "6s", "4f", "5d", "6p", "7s", "5f", "6d", "7p"]
 
     def maxocc(s):
@@ -64,7 +65,7 @@ try:
         print(list_last_orbit)
         
 
-    else:
+    elif len(list_eleconfig) <= 2:
         second_last_orbit = list_eleconfig[-2]
         last_orbit = list_eleconfig[-1]
 
@@ -73,25 +74,48 @@ try:
         print(list_second_last_orbit)
         print(list_last_orbit)
     
+    elif len(list_eleconfig) >= 3:
+        third_last_orbit = list_eleconfig[-3]
+        second_last_orbit = list_eleconfig[-2]
+        last_orbit = list_eleconfig[-1]
 
-    if list_last_orbit[-2] == "s" or "p":
-        if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) <= 7:
-            print("Group",int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]),"A")
+        list_last_orbit = list(last_orbit)
+        list_second_last_orbit = list(second_last_orbit)
+        list_third_last_orbit = list(third_last_orbit)
+        print(list_third_last_orbit)
+        print(list_second_last_orbit)
+        print(list_last_orbit)
+
+    
+
+    if list_last_orbit[-2] == "s":
+        
+            print("Valance Electron:",int(list_last_orbit[-1]))
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
-            print("Nature: Normal Element" )
+            print("Nature: Normal Element")
 
-        if int(list_second_last_orbit[-1]) + int(list_last_orbit[-1]) == 8:
-            print("Group: 0A")
+
+
+    elif list_last_orbit[-2] == "p":
+
+        if list_second_last_orbit[-2] == "s":
+
+            result = 10 + int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
+            print("Valance Electron:",result)
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
-            print("Nature: Normal Element" )
+            print("Nature: Normal Element")
 
-
+        elif list_third_last_orbit[-2] == "s":
+            result = 10 + int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
+            print("Valance Electron:",result)
+            print("Period:",int(list_last_orbit[-3]))
+            print("Block:", list_last_orbit[-2])
+            print("Nature: Normal Element")
+        
     elif list_last_orbit[-2] == "d":
-        print("d")
-    elif list_last_orbit[-2] == "f":
-        print("f")
+        pass
         
        
     
