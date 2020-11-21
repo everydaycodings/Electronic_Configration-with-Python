@@ -96,7 +96,6 @@ try:
             print("Nature: Normal Element")
 
 
-
     elif list_last_orbit[-2] == "p":
 
         if list_second_last_orbit[-2] == "s":
@@ -113,7 +112,8 @@ try:
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element")
-        
+
+
     elif list_last_orbit[-2] == "d":
         if list_second_last_orbit[-2] == "s":
 
@@ -124,7 +124,7 @@ try:
             print("Nature: Transitional Elements")
 
         elif list_third_last_orbit[-2] == "s":
-            
+
             result = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
             print("Valance Electron:",result)
             print("Period:",int(list_last_orbit[-3]))
