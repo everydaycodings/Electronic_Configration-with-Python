@@ -124,6 +124,7 @@ try:
             print("Nature: Transitional Elements")
 
         elif list_third_last_orbit[-2] == "s":
+            
             result = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
             print("Valance Electron:",result)
             print("Period:",int(list_last_orbit[-3]))
