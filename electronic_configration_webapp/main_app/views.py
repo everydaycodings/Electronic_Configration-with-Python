@@ -151,9 +151,10 @@ def result_page(request):
                 Block = list_last_orbit[-2]
                 Nature = "Transitional Elements"
             
+        context = {"Groups": Group, "Periods": Period, "Blocks": Block, "Nature": Nature}
 
     except TypeError:
-        print("wrong element")
+        context = {"Error": "No Element With This Name!"}
 
-        context = {"Groups": Group, "Periods": Period, "Blocks": Block, "Nature": Nature}
+
     return render(request, "index.html", context)
