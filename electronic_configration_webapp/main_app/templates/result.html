@@ -23,7 +23,7 @@
       {% csrf_token %}
         <div class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <div class="shadow flex">
-            <input class="w-full rounded p-2" name="element" id="element" type="text" placeholder="Search..." >
+            <input class="w-full rounded p-2" type="text" placeholder="Search..." name="element" id="element">
             <button class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400" type="submit">
               <i class="material-icons">search</i>
             </button>
@@ -41,13 +41,13 @@
   </header>
 
 
-
+  {% for list in lists %}
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="bg-white shadow p-4 rounded lg:w-64">
       <div class="text-center mt-4">
-        <p class="text-gray-600 font-bold">Name
+        <p class="text-gray-600 font-bold">{{list.Name}}
         </p>
-        <p class="text-sm font-hairline text-gray-600 mt-1">Subtitle
+        <p class="text-sm font-hairline text-gray-600 mt-1">{{list.Nature}}
         </p>
       </div>
       <div class="flex justify-center mt-4">
@@ -55,19 +55,19 @@
       </div>
       <div class="mt-6 flex justify-between text-center">
         <div>
-          <p class="text-gray-700 font-bold">20
+          <p class="text-gray-700 font-bold">{{list.Group}}
           </p>
           <p class="text-xs mt-2 text-gray-600 font-hairline">Group
           </p>
         </div>
         <div>
-          <p class="text-gray-700 font-bold">99k
+          <p class="text-gray-700 font-bold">{{list.Period}}
           </p>
           <p class="text-xs mt-2 text-gray-600 font-hairline">Period
           </p>
         </div>
         <div>
-          <p class="text-gray-700 font-bold">530
+          <p class="text-gray-700 font-bold">{{list.Block}}
           </p>
           <p class="text-xs mt-2 text-gray-700 font-hairline">Block
           </p>
@@ -80,6 +80,7 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 
 </body>
 
