@@ -1,6 +1,6 @@
 user = input("Enter the name of the element: ")
 
-element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berillium": 4, "boron": 5,
+element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berilium": 4, "boron": 5,
            "carbon": 6, "nitrogen": 7, "oxygen": 8, "fluorine": 9, "neon": 10,
            "sodium": 11, "magnesium": 12, "aluminium": 13, "silicon": 14, "phosporus":15,
            "sulphur": 16, "chlorine": 17, "argon": 18, "potassium": 19, "calcium": 20,
@@ -90,7 +90,7 @@ try:
 
     if list_last_orbit[-2] == "s":
         
-            print("Valance Electron:",int(list_last_orbit[-1]))
+            print("Group:",int(list_last_orbit[-1]))
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element")
@@ -101,14 +101,14 @@ try:
         if list_second_last_orbit[-2] == "s":
 
             result = 10 + int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
-            print("Valance Electron:",result)
+            print("Group:",result)
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element")
 
         elif list_third_last_orbit[-2] == "s":
             result = 10 + int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
-            print("Valance Electron:",result)
+            print("Group:",result)
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Normal Element")
@@ -118,7 +118,7 @@ try:
         if list_second_last_orbit[-2] == "s":
 
             result = int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
-            print("Valance Electron:",result)
+            print("Group:",result)
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Transitional Elements")
@@ -126,7 +126,7 @@ try:
         elif list_third_last_orbit[-2] == "s":
 
             result = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
-            print("Valance Electron:",result)
+            print("Group:",result)
             print("Period:",int(list_last_orbit[-3]))
             print("Block:", list_last_orbit[-2])
             print("Nature: Transitional Elements")
