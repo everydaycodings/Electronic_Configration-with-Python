@@ -182,12 +182,14 @@ def index(request):
 
 
 def result_page(request):
+    try:
+        listt = []
 
-    listt = []
+        con = {"Name": name, "Group": Group, "Period": Period, "Block": Block, "Nature": Nature}
 
-    con = {"Name": name, "Group": Group, "Period": Period, "Block": Block, "Nature": Nature}
+        listt.append(con)
 
-    listt.append(con)
-
-    context = {"lists": listt}
+        context = {"lists": listt}
+    except  NameError:
+        context = {"Error": "No element found"}
     return render(request, "result.html", context)

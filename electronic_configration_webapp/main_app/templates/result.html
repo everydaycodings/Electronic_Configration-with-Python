@@ -19,24 +19,11 @@
         </svg>
         <span class="ml-3 text-xl">Periodic-Table</span>
       </a>
-      <form class="flex w-full justify-center" method="POST" action="">
-      {% csrf_token %}
-        <div class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <div class="shadow flex">
-            <input class="w-full rounded p-2" type="text" placeholder="Search..." name="element" id="element">
-            <button class="bg-white w-auto flex justify-end items-center text-blue-500 p-2 hover:text-blue-400" type="submit">
-              <i class="material-icons">search</i>
-            </button>
-          </div>
-        </div>
-      </form>
-      <button
-        class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Button
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
+      <div class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <button class="border-2 border-blue-500 px-4 py-2 text-blue-500 hover:text-white hover:bg-blue-500 rounded">
+          <a href="{% url 'index' %}">Go Back</a>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -51,7 +38,7 @@
         </p>
       </div>
       <div class="flex justify-center mt-4">
-        <img class="shadow sm:w-12 sm:h-12 w-10 h-10 rounded-full" src="" />
+        <img class="shadow sm:w-12 sm:h-12 w-10 h-10 rounded-full" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/21c18c44035087.560764cc784cd.jpg" />
       </div>
       <div class="mt-6 flex justify-between text-center">
         <div>
@@ -75,7 +62,7 @@
       </div>
       <div class="mt-6">
         <button class="rounded shadow-md w-full items-center shadow bg-blue-500 px-4 py-2 text-white hover:bg-blue-400">
-          <a href="https://periodic-table.com/{{list.Name}}/" target="_blank" >Learn More!</a>
+          <a href="https://periodic-table.com/{{list.Name}}/" target="_blank">Learn More!</a>
         </button>
       </div>
     </div>
