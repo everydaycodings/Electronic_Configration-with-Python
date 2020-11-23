@@ -145,7 +145,7 @@ def index(request):
                         Period = int(list_last_orbit[-3])
 
                     elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                        Period = int(list_second_last_orbit[-3])
+                        Period = int(list_second_last_orbit[-4])
                         
                 
                     Block = list_last_orbit[-2]
