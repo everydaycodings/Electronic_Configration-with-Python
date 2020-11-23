@@ -103,10 +103,16 @@ try:
             print("Group:",result)
 
             if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                print("Period:",int(list_last_orbit[-3]))
+                if len(list_last_orbit) == 4:
+                    print("Period:",int(list_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_last_orbit[-3]))
 
             elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                print("Period:",int(list_second_last_orbit[-3]))
+                if len(list_second_last_orbit) == 4:
+                    print("Period:",int(list_second_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_second_last_orbit[-3]))
                 
             print("Block:", list_second_last_orbit[-2])
             print("Nature: Normal Element")
@@ -127,10 +133,16 @@ try:
             print("Group:",result)
 
             if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                print("Period:",int(list_last_orbit[-3]))
+                if len(list_last_orbit) == 4:
+                    print("Period:",int(list_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_last_orbit[-3]))
 
             elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                print("Period:",int(list_second_last_orbit[-3]))
+                if len(list_second_last_orbit) == 4:
+                    print("Period:",int(list_second_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_second_last_orbit[-3]))
                 
             print("Block:", list_second_last_orbit[-2])
             print("Nature: Normal Element")
@@ -142,10 +154,16 @@ try:
             print("Group:",result)
 
             if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                print("Period:",int(list_last_orbit[-3]))
+                if len(list_last_orbit) == 4:
+                    print("Period:",int(list_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_last_orbit[-3]))
 
             elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                print("Period:",int(list_second_last_orbit[-3]))
+                if len(list_second_last_orbit) == 4:
+                    print("Period:",int(list_second_last_orbit[-4]))
+                else:
+                    print("Period:",int(list_second_last_orbit[-3]))
                 
         
             print("Block:", list_last_orbit[-2])

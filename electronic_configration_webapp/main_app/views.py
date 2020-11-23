@@ -106,10 +106,16 @@ def index(request):
                     Group = 10 + int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
 
                     if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                        Period = int(list_last_orbit[-3])
+                        if len(list_last_orbit) == 4:
+                            Period = int(list_last_orbit[-4])
+                        else:
+                            Period = int(list_last_orbit[-3])
 
                     elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                        Period = int(list_second_last_orbit[-3])
+                        if len(list_second_last_orbit) == 4:
+                            Period = int(list_second_last_orbit[-4])
+                        else:
+                            Period = int(list_second_last_orbit[-3])
                         
                     Block = list_second_last_orbit[-2]
                     Nature = "Normal Element"
@@ -128,10 +134,16 @@ def index(request):
                     Group = int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
                     
                     if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                        Period = int(list_last_orbit[-3])
+                        if len(list_last_orbit) == 4:
+                            Period = int(list_last_orbit[-4])
+                        else:
+                            Period = int(list_last_orbit[-3])
 
                     elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                        Period = int(list_second_last_orbit[-3])
+                        if len(list_second_last_orbit) == 4:
+                            Period = int(list_second_last_orbit[-4])
+                        else:
+                            Period = int(list_second_last_orbit[-3])
                         
                     Block = list_second_last_orbit[-2]
                     Nature = "Transitional Element"
@@ -142,10 +154,16 @@ def index(request):
                     Group = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
 
                     if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                        Period = int(list_last_orbit[-3])
+                        if len(list_last_orbit) == 4:
+                            Period = int(list_last_orbit[-4])
+                        else:
+                            Period = int(list_last_orbit[-3])
 
                     elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                        Period = int(list_second_last_orbit[-4])
+                        if len(list_second_last_orbit) == 4:
+                            Period = int(list_second_last_orbit[-4])
+                        else:
+                            Period = int(list_second_last_orbit[-3])
                         
                 
                     Block = list_last_orbit[-2]
