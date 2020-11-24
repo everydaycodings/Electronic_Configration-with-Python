@@ -22,153 +22,156 @@ element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berilium": 4, "boron": 5,
         }
 
 try:
-    elem = element.get(user)
+    if element.get(user) <= 56:
+        elem = element.get(user)
 
 
-    eleconfig = ""
-    last_orbit =""
-    second_last_orbit = ""
-    third_last_orbit = ""
-    prefix = ["1s", "2s", "2p", "3s", "3p", "4s", "3d", "4p", "5s", "4d", "5p", "6s", "4f", "5d", "6p", "7s", "5f", "6d", "7p"]
+        eleconfig = ""
+        last_orbit =""
+        second_last_orbit = ""
+        third_last_orbit = ""
+        prefix = ["1s", "2s", "2p", "3s", "3p", "4s", "3d", "4p", "5s", "4d", "5p", "6s", "4f", "5d", "6p", "7s", "5f", "6d", "7p"]
 
-    def maxocc(s):
-        global maxoccu
-        if s[1] == "s":
-            maxoccu = 2
-        if s[1] == "p":
-            maxoccu = 6
-        if s[1] == "d":
-            maxoccu = 10
-        if s[1] == "f":
-            maxoccu = 14
+        def maxocc(s):
+            global maxoccu
+            if s[1] == "s":
+                maxoccu = 2
+            if s[1] == "p":
+                maxoccu = 6
+            if s[1] == "d":
+                maxoccu = 10
+            if s[1] == "f":
+                maxoccu = 14
 
-    for x in range(len(prefix)):
-        maxocc(prefix[x])
-        if elem == 0:
-            break
-        elif elem >= 118:
-            break
-        elif elem >= maxoccu:
-            eleconfig = eleconfig + prefix[x] + str(maxoccu) + " "
-            elem = elem - maxoccu
-        elif elem < maxoccu:
-            eleconfig = eleconfig + prefix[x] + str(elem)
-            break
+        for x in range(len(prefix)):
+            maxocc(prefix[x])
+            if elem == 0:
+                break
+            elif elem >= 118:
+                break
+            elif elem >= maxoccu:
+                eleconfig = eleconfig + prefix[x] + str(maxoccu) + " "
+                elem = elem - maxoccu
+            elif elem < maxoccu:
+                eleconfig = eleconfig + prefix[x] + str(elem)
+                break
 
-    list_eleconfig = eleconfig.split()
-    print(list_eleconfig)
-    
-    if len(list_eleconfig) <= 1:
-        last_orbit = list_eleconfig[-1]
-
-        list_last_orbit = list(last_orbit)
-        print(list_last_orbit)
+        list_eleconfig = eleconfig.split()
+        print(list_eleconfig)
         
+        if len(list_eleconfig) <= 1:
+            last_orbit = list_eleconfig[-1]
 
-    elif len(list_eleconfig) <= 2:
-        second_last_orbit = list_eleconfig[-2]
-        last_orbit = list_eleconfig[-1]
-
-        list_last_orbit = list(last_orbit)
-        list_second_last_orbit = list(second_last_orbit)
-        print(list_second_last_orbit)
-        print(list_last_orbit)
-    
-    elif len(list_eleconfig) >= 3:
-        third_last_orbit = list_eleconfig[-3]
-        second_last_orbit = list_eleconfig[-2]
-        last_orbit = list_eleconfig[-1]
-
-        list_last_orbit = list(last_orbit)
-        list_second_last_orbit = list(second_last_orbit)
-        list_third_last_orbit = list(third_last_orbit)
-        print(list_third_last_orbit)
-        print(list_second_last_orbit)
-        print(list_last_orbit)
-
-    
-
-    if list_last_orbit[-2] == "s":
-        
-            print("Group:",int(list_last_orbit[-1]))
-            print("Period:",int(list_last_orbit[-3]))
-            print("Block:", list_last_orbit[-2])
-            print("Nature: Normal Element")
-
-
-    elif list_last_orbit[-2] == "p":
-
-        if list_second_last_orbit[-2] == "s":
-            result = 10 + int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
-            print("Group:",result)
-
-            if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                if len(list_last_orbit) == 4:
-                    print("Period:",int(list_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_last_orbit[-3]))
-
-            elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                if len(list_second_last_orbit) == 4:
-                    print("Period:",int(list_second_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_second_last_orbit[-3]))
-                
-            print("Block:", list_second_last_orbit[-2])
-            print("Nature: Normal Element")
-
-        elif list_third_last_orbit[-2] == "s":
-            result = 10 + int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
-            print("Group:",result)
+            list_last_orbit = list(last_orbit)
+            print(list_last_orbit)
             
-            print("Period:",int(list_last_orbit[-3]))
-            print("Block:", list_last_orbit[-2])
-            print("Nature: Normal Element")
 
+        elif len(list_eleconfig) <= 2:
+            second_last_orbit = list_eleconfig[-2]
+            last_orbit = list_eleconfig[-1]
 
-    elif list_last_orbit[-2] == "d":
-        if list_second_last_orbit[-2] == "s":
-
-            result = int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
-            print("Group:",result)
-
-            if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                if len(list_last_orbit) == 4:
-                    print("Period:",int(list_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_last_orbit[-3]))
-
-            elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                if len(list_second_last_orbit) == 4:
-                    print("Period:",int(list_second_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_second_last_orbit[-3]))
-                
-            print("Block:", list_second_last_orbit[-2])
-            print("Nature: Normal Element")
-    
-
-        elif list_third_last_orbit[-2] == "s":
-
-            result = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
-            print("Group:",result)
-
-            if list_last_orbit[-3] >= list_second_last_orbit[-3]:
-                if len(list_last_orbit) == 4:
-                    print("Period:",int(list_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_last_orbit[-3]))
-
-            elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
-                if len(list_second_last_orbit) == 4:
-                    print("Period:",int(list_second_last_orbit[-4]))
-                else:
-                    print("Period:",int(list_second_last_orbit[-3]))
-                
+            list_last_orbit = list(last_orbit)
+            list_second_last_orbit = list(second_last_orbit)
+            print(list_second_last_orbit)
+            print(list_last_orbit)
         
-            print("Block:", list_last_orbit[-2])
-            print("Nature: Transitional Elements")
+        elif len(list_eleconfig) >= 3:
+            third_last_orbit = list_eleconfig[-3]
+            second_last_orbit = list_eleconfig[-2]
+            last_orbit = list_eleconfig[-1]
+
+            list_last_orbit = list(last_orbit)
+            list_second_last_orbit = list(second_last_orbit)
+            list_third_last_orbit = list(third_last_orbit)
+            print(list_third_last_orbit)
+            print(list_second_last_orbit)
+            print(list_last_orbit)
+
         
+
+        if list_last_orbit[-2] == "s":
+            
+                print("Group:",int(list_last_orbit[-1]))
+                print("Period:",int(list_last_orbit[-3]))
+                print("Block:", list_last_orbit[-2])
+                print("Nature: Normal Element")
+
+
+        elif list_last_orbit[-2] == "p":
+
+            if list_second_last_orbit[-2] == "s":
+                result = 10 + int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
+                print("Group:",result)
+
+                if list_last_orbit[-3] >= list_second_last_orbit[-3]:
+                    if len(list_last_orbit) == 4:
+                        print("Period:",int(list_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_last_orbit[-3]))
+
+                elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
+                    if len(list_second_last_orbit) == 4:
+                        print("Period:",int(list_second_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_second_last_orbit[-3]))
+                    
+                print("Block:", list_second_last_orbit[-2])
+                print("Nature: Normal Element")
+
+            elif list_third_last_orbit[-2] == "s":
+                result = 10 + int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
+                print("Group:",result)
+                
+                print("Period:",int(list_last_orbit[-3]))
+                print("Block:", list_last_orbit[-2])
+                print("Nature: Normal Element")
+
+
+        elif list_last_orbit[-2] == "d":
+            if list_second_last_orbit[-2] == "s":
+
+                result = int(list_last_orbit[-1]) + int(list_second_last_orbit[-1])
+                print("Group:",result)
+
+                if list_last_orbit[-3] >= list_second_last_orbit[-3]:
+                    if len(list_last_orbit) == 4:
+                        print("Period:",int(list_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_last_orbit[-3]))
+
+                elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
+                    if len(list_second_last_orbit) == 4:
+                        print("Period:",int(list_second_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_second_last_orbit[-3]))
+                    
+                print("Block:", list_second_last_orbit[-2])
+                print("Nature: Normal Element")
+        
+
+            elif list_third_last_orbit[-2] == "s":
+
+                result = int(list_last_orbit[-1]) + int(list_third_last_orbit[-1])
+                print("Group:",result)
+
+                if list_last_orbit[-3] >= list_second_last_orbit[-3]:
+                    if len(list_last_orbit) == 4:
+                        print("Period:",int(list_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_last_orbit[-3]))
+
+                elif list_last_orbit[-3] <= list_second_last_orbit[-3]:
+                    if len(list_second_last_orbit) == 4:
+                        print("Period:",int(list_second_last_orbit[-4]))
+                    else:
+                        print("Period:",int(list_second_last_orbit[-3]))
+                    
+            
+                print("Block:", list_last_orbit[-2])
+                print("Nature: Transitional Elements")
+    else:
+        print("This Application is avilable till Barium(56) For Now, We re still building this app.")
+            
        
     
 except TypeError:
