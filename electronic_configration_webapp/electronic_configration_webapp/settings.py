@@ -26,7 +26,7 @@ SECRET_KEY = 'q66&z8bq4wovl^az(2p=jv#b&f+1w&3#7jq(f6*7x@y!8b*!8+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["periodic--table.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition

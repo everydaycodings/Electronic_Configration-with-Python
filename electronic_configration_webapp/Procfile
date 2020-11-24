@@ -1,0 +1,1 @@
+web: gunicorn electronic_configration_webapp.wsgi
