@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.contrib import messages
 
 # Create your views here.
 
@@ -170,14 +171,14 @@ def index(request):
                         Block = list_last_orbit[-2]
                         Nature = "Transitional Elements"
             else:
-                print("This Application is avilable till Barium(56) For Now, We re still building this app.")
+                messages.warning(request, 'This Application is avilable till Barium(56) For Now, We are still building this app.')
 
             
                 
             
 
         except TypeError:
-            context = {"Error": "No Element With This Name!"}
+            messages.warning(request, 'Element Doesnot Exits')
         
         return redirect("result_page")
     

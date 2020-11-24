@@ -28,6 +28,36 @@
   </header>
 
 
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <div class="p-16">
+      <div class="bg-white py-16 rounded-lg shadow-xl relative max-w-sm">
+        <p class="text-center text-gray-700 font-bold text-4xl">Message</p>
+        <p class="text-gray-600 text-lg text-center">
+          {{ message }}
+        </p>
+
+        <div class="flex justify-center items-center mt-6">
+          <button class="bg-red-500 text-white font-bold px-8 py-2 rounded-lg hover:opacity-75">
+            <a href="{% url 'index' %}">Go Back</a>
+          </button>
+        </div>
+        <div class="absolute w-full">
+          <svg class="fill-current text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,64L120,90.7C240,117,480,171,720,176C960,181,1200,139,1320,117.3L1440,
+    96L1440,320L1320,320C1200,320,960,320,720,
+    320C480,320,240,320,120,320L0,320Z"></path>
+          </svg>
+          <div class="h-6 w-full bg-red-500 rounded-b-lg"></div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+
   {% for list in lists %}
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="bg-white shadow p-4 rounded lg:w-64">
@@ -38,7 +68,8 @@
         </p>
       </div>
       <div class="flex justify-center mt-4">
-        <img class="shadow sm:w-12 sm:h-12 w-10 h-10 rounded-full" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/21c18c44035087.560764cc784cd.jpg" />
+        <img class="shadow sm:w-12 sm:h-12 w-10 h-10 rounded-full"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/21c18c44035087.560764cc784cd.jpg" />
       </div>
       <div class="mt-6 flex justify-between text-center">
         <div>
