@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
+from .models import ContactUs
 
 # Create your views here.
 
 def index(request):
 
-    if request.method == "POST":
+    if request.method == "POST" and "element" in request.POST:
         user = request.POST.get("element")
 
         element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berilium": 4, "boron": 5,
@@ -181,6 +182,19 @@ def index(request):
             messages.warning(request, 'Element Doesnot Exits')
         
         return redirect("result_page")
+    
+    elif request.method == "POST" and "contactus" in request.POST:
+        name = request.POST["name"]
+        email = request.POST["email"]
+        message = request.POST["message"]
+        contactus = ContactUs(name=name, email=email, message=message)
+
+        if len(email) < 5 or len(name) < 2 or len(message) < 5:
+            messages.error(request, "Error, Please Enter The Valid Information!!!")
+        
+        else:
+            contactus.save()
+            messages.success(request, "Success, Your Message Has Been Successfully Sent To The Admin :) ")
     
 
 
