@@ -7,7 +7,7 @@ from .models import ContactUs
 def index(request):
 
     if request.method == "POST" and "element" in request.POST:
-        user = request.POST.get("element")
+        user = request.POST.get("element").lower()
 
         element = {"hydrogen": 1, "helium": 2, "lithium": 3, "berilium": 4, "boron": 5,
                 "carbon": 6, "nitrogen": 7, "oxygen": 8, "fluorine": 9, "neon": 10,
